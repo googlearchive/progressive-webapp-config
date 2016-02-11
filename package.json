@@ -1,0 +1,11 @@
+{
+  "name": "progressive-webapp-config",
+  "version": "1.0.0",
+  "description": "Progressive Web App",
+  "scripts": {
+    "precache": "node_modules/sw-precache/cli.js --root=app"
+  },
+  "dependencies": {
+    "sw-precache": "^3.0.0"
+  }
+}

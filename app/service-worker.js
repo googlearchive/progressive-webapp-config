@@ -1,11 +1,17 @@
 /**
- * @license
- * Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
- * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
- * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
- * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
- * Code distributed by Google as part of the polymer project is also
- * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 // This generated service worker JavaScript will precache your site's resources.
@@ -23,7 +29,7 @@
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["favicon.ico","964ec73d17418f58f8ac18733332ac0a"],["images/touch/apple-touch-icon.png","6f03e9c4471d2efc0d622089274153cf"],["images/touch/chrome-splashscreen-icon-384x384.png","2efe194a975f4c640c5f219c4e727439"],["images/touch/chrome-touch-icon-192x192.png","6a0551f0c9b53ca62f3c67a5eaf51846"],["images/touch/icon-128x128.png","ad7a8966882b6f974b2b5bf31dac1cb3"],["images/touch/icon-512x512.png","2f8429a14428eeb75bf33e58620e3dc8"],["images/touch/icon-72x72.png","18016637a367e17945ac1acadc39cb70"],["images/touch/icon-96x96.png","a44ac54a6740421b2c185db9ee94881c"],["images/touch/ms-icon-144x144.png","f348014550511fc297d34e1ffc6e7ae5"],["images/touch/ms-touch-icon-144x144-precomposed.png","f348014550511fc297d34e1ffc6e7ae5"],["index.html","d91e59abe2133487c357612bab0dc798"],["main.js","0b539cb5cc376d14984538e0c48d16ae"],["manifest.json","ee0bd8cad9ea3e26a82ad6ae6b0a7388"],["service-worker.js","acf7e7d569d01041b5aa71d30b18d6e6"]];
+var PrecacheConfig = [["favicon.ico","964ec73d17418f58f8ac18733332ac0a"],["images/icons/apple-touch-icon.png","6f03e9c4471d2efc0d622089274153cf"],["images/icons/chrome-splashscreen-icon-384x384.png","2efe194a975f4c640c5f219c4e727439"],["images/icons/chrome-touch-icon-192x192.png","6a0551f0c9b53ca62f3c67a5eaf51846"],["images/icons/icon-128x128.png","ad7a8966882b6f974b2b5bf31dac1cb3"],["images/icons/icon-512x512.png","2f8429a14428eeb75bf33e58620e3dc8"],["images/icons/icon-72x72.png","18016637a367e17945ac1acadc39cb70"],["images/icons/icon-96x96.png","a44ac54a6740421b2c185db9ee94881c"],["images/icons/ms-icon-144x144.png","f348014550511fc297d34e1ffc6e7ae5"],["images/icons/ms-touch-icon-144x144-precomposed.png","f348014550511fc297d34e1ffc6e7ae5"],["index.html","540185b71fdef20641db5ce336e0c668"],["main.js","89f7e8d43654ecc6dfc4da6dac1adbf3"],["manifest.json","47f87daa2919d92680b0d2150e6a1fd8"],["service-worker.js","1c468a5784f3cca0b3f07fc81d619283"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1-sw-precache-' + (self.registration ? self.registration.scope : '') + '-';
 

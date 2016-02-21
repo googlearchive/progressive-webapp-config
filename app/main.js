@@ -8,8 +8,12 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 /* eslint-env browser */
-(function() {
-  'use strict';
+
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) {
+    // Service worker isn't supported
+    return;
+  }
 
   // Check to make sure service workers are supported in the current browser,
   // and that the current page is accessed from a secure origin. Using a
@@ -24,51 +28,22 @@
       )
     );
 
-  if ('serviceWorker' in navigator &&
-      (window.location.protocol === 'https:' || isLocalhost)) {
+    if (!isLocalhost && window.location.protocol !== 'https:') {
+      console.warn('Service worker is supported in this browser but cannot ' +
+        'work on a page that isn\'t accessed by HTTPS.');
+      return;
+    }
+
     navigator.serviceWorker.register('service-worker.js')
-    .then(function(registration) {
-      // Check to see if there's an updated version of service-worker.js with
-      // new files to cache:
-      // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-registration-update-method
-      if (typeof registration.update === 'function') {
-        registration.update();
-      }
-
-      // updatefound is fired if service-worker.js changes.
-      registration.onupdatefound = function() {
-        // updatefound is also fired the very first time the SW is installed,
-        // and there's no need to prompt for a reload at that point.
-        // So check here to see if the page is already controlled,
-        // i.e. whether there's an existing service worker.
-        if (navigator.serviceWorker.controller) {
-          // The updatefound event implies that registration.installing is set:
-          // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
-          var installingWorker = registration.installing;
-
-          installingWorker.onstatechange = function() {
-            switch (installingWorker.state) {
-              case 'installed':
-                // At this point, the old content will have been purged and the
-                // fresh content will have been added to the cache.
-                // It's the perfect time to display a "New content is
-                // available; please refresh." message in the page's interface.
-                break;
-
-              case 'redundant':
-                throw new Error('The installing ' +
-                                'service worker became redundant.');
-
-              default:
-                // Ignore
-            }
-          };
-        }
-      };
-    }).catch(function(e) {
+    .catch(function(e) {
       console.error('Error during service worker registration:', e);
     });
-  }
+}
+
+(function() {
+  'use strict';
+
+  registerServiceWorker();
 
   // Your custom JavaScript goes here
 })();
